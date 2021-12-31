@@ -1,0 +1,89 @@
+import type { NextPage } from "next";
+import { useSession, signIn, signOut } from "next-auth/client";
+
+const Navbar: NextPage = () => {
+  const [session, loading] = useSession();
+
+  if (loading) {
+    return null;
+  }
+
+  if (session) {
+    return (
+      <nav>
+        <ul>
+          <a href="/" id="logo">
+            <img
+              src="/static/bettermailto.png"
+              height="50px"
+              alt="bettermailto"
+            />
+          </a>
+          <div>
+            <ul>
+              <li>
+                <a
+                  onClick={() =>
+                    signOut({
+                      callbackUrl: `${window.location.origin}`,
+                    })
+                  }
+                >
+                  Sign Out
+                </a>
+              </li>
+            </ul>
+            <a href="https://github.com/y-arjun-y/bettermailto">
+              <img
+                src="/static/github.png"
+                alt="GitHub Logo"
+                id="github"
+                height="30px"
+              />
+            </a>
+          </div>
+        </ul>
+      </nav>
+    );
+  }
+
+  return (
+    <nav>
+      <ul>
+        <a href="/" id="logo">
+          <img
+            src="/static/bettermailto.png"
+            height="50px"
+            alt="bettermailto"
+          />
+        </a>
+        <a href="/#about" className="mininavbar">
+          <li>About</li>
+        </a>
+        <div>
+          <ul>
+            <a href="/signin">
+              <li className="mininavbar">Sign Up</li>
+              <li className="mininavbar" id="slash">
+                <span>/ </span>
+              </li>
+              <li>
+                <span>Log In</span>
+              </li>
+            </a>
+          </ul>
+          <a href="https://github.com/y-arjun-y/bettermailto">
+            <img
+              src="/static/github.png"
+              alt="GitHub Logo"
+              id="github"
+              height="30px"
+            />
+          </a>
+        </div>
+      </ul>
+    </nav>
+  );
+};
+
+export default Navbar;
