@@ -123,7 +123,7 @@ const Home = ({ users }) => {
         </h2>
         <h3>Try it now, send us a test email and we'll reply back!</h3>
         {/* @ts-ignore */}
-        <Providers subject="Test" />
+        <Providers subject="Test - bettermailto (do not remove or change this!)" />
         <div className="about-flexbox">
           <div className="about">
             <h1 id="about">About</h1>
@@ -142,7 +142,7 @@ const Home = ({ users }) => {
             </p>
             <p>
               bettermailto gives you a no-code alternative to all of this.{" "}
-              <a href="/signup">Sign up now</a>.
+              <a href="/signin">Sign up now</a>.
             </p>
           </div>
           <div className="about-code">
