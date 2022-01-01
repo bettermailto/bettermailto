@@ -11,9 +11,12 @@ export default function SignIn({ providers }) {
       </h1>
       <div className="signin">
         {Object.values(providers).map((provider) => (
+          /* @ts-ignore */
           <div key={provider.name}>
+            {/* @ts-ignore */}
             <button onClick={() => signIn(provider.id)}>
               <img src="/static/google.png" height={"40px"} />
+              {/* @ts-ignore */}
               Sign in with {provider.name}
             </button>
           </div>
