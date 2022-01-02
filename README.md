@@ -1,2 +1,2 @@
-# bettermailto
-Replacing the mailto attribute in HTML.
+# [bettermailto](https://bettermailto.com)
+![bettermailto](https://bettermailto.com/static/bettermailto-card.png)
