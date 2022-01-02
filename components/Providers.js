@@ -1,6 +1,4 @@
-import type { NextPage } from "next";
-
-const Providers: NextPage = (props) => {
+const Providers = (props) => {
   return (
     <div className="provider-div">
       <a
@@ -13,7 +11,7 @@ const Providers: NextPage = (props) => {
           props.subject
         }
       >
-        <div className="provider">
+        <div>
           <img src="/static/gmail.png" alt="Gmail" height="200px" />
           <h1>Gmail</h1>
         </div>
@@ -28,7 +26,7 @@ const Providers: NextPage = (props) => {
           props.subject
         }
       >
-        <div className="provider">
+        <div>
           <img src="/static/outlook.png" alt="Outlook" height="200px" />
           <h1>Outlook</h1>
         </div>
@@ -43,7 +41,7 @@ const Providers: NextPage = (props) => {
           props.subject
         }
       >
-        <div className="provider">
+        <div>
           <img src="/static/yahoo.png" alt="Yahoo" height="200px" />
           <h1>Yahoo</h1>
         </div>

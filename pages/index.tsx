@@ -1,6 +1,6 @@
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import Providers from "../components/Providers";
+import Providers from "../components/Providers.js";
 import { useSession } from "next-auth/client";
 import clientPromise from "../mongodb";
 
@@ -41,14 +41,13 @@ const Home = ({ users }) => {
             <div id="email">
               <a
                 href={
-                  "localhost:3000/user/" +
+                  "https://bettermailto.com/user/" +
                   session.user.name.toLowerCase().replace(" ", "-") +
                   "-" +
                   uniqueId
                 }
               >
-                {"https://bettermailto.com" +
-                  "/user/" +
+                {"https://bettermailto.com/user/" +
                   session.user.name.toLowerCase().replace(" ", "-") +
                   "-" +
                   uniqueId}
@@ -57,7 +56,7 @@ const Home = ({ users }) => {
                 id="copy-pseudodiv"
                 onClick={() => {
                   navigator.clipboard.writeText(
-                    "localhost:3000/user/" +
+                    "https://bettermailto.com/user/" +
                       session.user.name.toLowerCase().replace(" ", "-") +
                       "-" +
                       uniqueId
@@ -81,7 +80,7 @@ const Home = ({ users }) => {
               id="copy-pseudodiv"
               onClick={() => {
                 navigator.clipboard.writeText(
-                  "localhost:3000/user/" +
+                  "https://bettermailto.com/user/" +
                     session.user.name.toLowerCase().replace(" ", "-") +
                     "-" +
                     uniqueId

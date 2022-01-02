@@ -1,4 +1,4 @@
-import Providers from "../../components/Providers";
+import Providers from "../../components/Providers.js";
 import { useRouter } from "next/router";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
