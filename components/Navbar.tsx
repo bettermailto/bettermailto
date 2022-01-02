@@ -33,7 +33,7 @@ const Navbar: NextPage = () => {
                 </a>
               </li>
             </ul>
-            <a href="https://github.com/y-arjun-y/bettermailto">
+            <a href="https://github.com/bettermailto/bettermailto">
               <img
                 src="/static/github.png"
                 alt="GitHub Logo"
