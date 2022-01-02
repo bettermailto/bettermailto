@@ -11,7 +11,7 @@ const Providers = (props) => {
           props.subject
         }
       >
-        <div>
+        <div className="provider">
           <img src="/static/gmail.png" alt="Gmail" height="200px" />
           <h1>Gmail</h1>
         </div>
@@ -26,7 +26,7 @@ const Providers = (props) => {
           props.subject
         }
       >
-        <div>
+        <div className="provider">
           <img src="/static/outlook.png" alt="Outlook" height="200px" />
           <h1>Outlook</h1>
         </div>
@@ -41,7 +41,7 @@ const Providers = (props) => {
           props.subject
         }
       >
-        <div>
+        <div className="provider">
           <img src="/static/yahoo.png" alt="Yahoo" height="200px" />
           <h1>Yahoo</h1>
         </div>
