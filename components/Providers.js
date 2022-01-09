@@ -9,8 +9,6 @@ const Providers = (props) => {
         .then(function (token) {
           const URL_RECAPTCHA = `https://bettermailto-cors.herokuapp.com/https://google.com/recaptcha/api/siteverify?secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${token}`;
 
-          console.log(URL_RECAPTCHA);
-
           fetch(URL_RECAPTCHA)
             .then((response) => response.json())
             .then((data) => {
