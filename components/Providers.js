@@ -3,7 +3,7 @@ const Providers = (props) => {
     e.preventDefault();
     grecaptcha.ready(function () {
       grecaptcha
-        .execute("6Leczv4dAAAAAAXurwat7FKW4SKvN30dlexZmmfm", {
+        .execute("6LdtPf8dAAAAAOO2sn-5upuzsnggOa5PsXBcuZDf", {
           action: "submit",
         })
         .then(function (token) {
@@ -28,7 +28,7 @@ const Providers = (props) => {
     e.preventDefault();
     grecaptcha.ready(function () {
       grecaptcha
-        .execute("6Leczv4dAAAAAAXurwat7FKW4SKvN30dlexZmmfm", {
+        .execute("6LdtPf8dAAAAAOO2sn-5upuzsnggOa5PsXBcuZDf", {
           action: "submit",
         })
         .then(function (token) {
@@ -53,7 +53,7 @@ const Providers = (props) => {
     e.preventDefault();
     grecaptcha.ready(function () {
       grecaptcha
-        .execute("6Leczv4dAAAAAAXurwat7FKW4SKvN30dlexZmmfm", {
+        .execute("6LdtPf8dAAAAAOO2sn-5upuzsnggOa5PsXBcuZDf", {
           action: "submit",
         })
         .then(function (token) {
