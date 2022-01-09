@@ -37,6 +37,8 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="The no-code replacement for mailto."
         />
         <link rel="icon" href="/static/favicon.ico" />
+        <script src="https://www.google.com/recaptcha/api.js?render=6Leczv4dAAAAAAXurwat7FKW4SKvN30dlexZmmfm"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       </Head>
       <Component {...pageProps} />
     </Provider>

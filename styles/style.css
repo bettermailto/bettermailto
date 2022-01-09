@@ -168,6 +168,21 @@ ul div img {
   font-family: var(--alt-code-font);
 }
 
+.captcha-div {
+  display: none;
+  transform: scale(1.07);
+  position: relative;
+  right: 26.5em;
+}
+
+.captcha {
+  background-color: unset;
+}
+
+.captcha:hover {
+  box-shadow: none;
+}
+
 /* About */
 .about h1 {
   text-align: inherit;
@@ -332,6 +347,10 @@ footer span {
 
   #logo {
     margin-left: -2.25em;
+  }
+
+  .captcha-div {
+    right: 0em;
   }
 
   .container {

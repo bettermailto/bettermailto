@@ -1,51 +1,96 @@
 const Providers = (props) => {
+  function recaptchaGmail(e) {
+    e.preventDefault();
+    grecaptcha.ready(function () {
+      grecaptcha
+        .execute("6Leczv4dAAAAAAXurwat7FKW4SKvN30dlexZmmfm", {
+          action: "submit",
+        })
+        .then(function (token) {
+          const URL_RECAPTCHA = `https://bettermailto-cors.herokuapp.com/https://google.com/recaptcha/api/siteverify?secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${token}`;
+
+          console.log(URL_RECAPTCHA);
+
+          fetch(URL_RECAPTCHA)
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.score >= 0.6) {
+                window.location =
+                  "https://mail.google.com/mail/?view=cm&fs=1&to=" +
+                  props.email +
+                  "&su=" +
+                  props.subject;
+              }
+            });
+        });
+    });
+  }
+
+  function recaptchaOutlook(e) {
+    e.preventDefault();
+    grecaptcha.ready(function () {
+      grecaptcha
+        .execute("6Leczv4dAAAAAAXurwat7FKW4SKvN30dlexZmmfm", {
+          action: "submit",
+        })
+        .then(function (token) {
+          fetch(
+            `https://bettermailto-cors.herokuapp.com/https://google.com/recaptcha/api/siteverify?secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${token}`
+          )
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.score >= 0.6) {
+                window.location =
+                  "https://outlook.office.com/mail/deeplink/compose?to=" +
+                  props.email +
+                  "&subject=" +
+                  props.subject;
+              }
+            });
+        });
+    });
+  }
+
+  function recaptchaYahoo(e) {
+    e.preventDefault();
+    grecaptcha.ready(function () {
+      grecaptcha
+        .execute("6Leczv4dAAAAAAXurwat7FKW4SKvN30dlexZmmfm", {
+          action: "submit",
+        })
+        .then(function (token) {
+          fetch(
+            `https://bettermailto-cors.herokuapp.com/https://google.com/recaptcha/api/siteverify?secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${token}`
+          )
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.score >= 0.6) {
+                window.location =
+                  "https://compose.mail.yahoo.com/?to=" +
+                  props.email +
+                  "&subject=" +
+                  props.subject;
+              }
+            });
+        });
+    });
+  }
+
   return (
     <div className="provider-div">
-      <a
-        href={
-          "https://mail.google.com/mail/?view=cm&fs=1&to=" +
-          // @ts-ignore
-          props.email +
-          "&su=" +
-          // @ts-ignore
-          props.subject
-        }
-      >
-        <div className="provider">
-          <img src="/static/gmail.png" alt="Gmail" height="200px" />
-          <h1>Gmail</h1>
-        </div>
-      </a>
-      <a
-        href={
-          "https://outlook.office.com/mail/deeplink/compose?to=" +
-          // @ts-ignore
-          props.email +
-          "&subject=" +
-          // @ts-ignore
-          props.subject
-        }
-      >
-        <div className="provider">
-          <img src="/static/outlook.png" alt="Outlook" height="200px" />
-          <h1>Outlook</h1>
-        </div>
-      </a>
-      <a
-        href={
-          "https://compose.mail.yahoo.com/?to=" +
-          // @ts-ignore
-          props.email +
-          "&subject=" +
-          // @ts-ignore
-          props.subject
-        }
-      >
-        <div className="provider">
-          <img src="/static/yahoo.png" alt="Yahoo" height="200px" />
-          <h1>Yahoo</h1>
-        </div>
-      </a>
+      <div className="provider" onClick={recaptchaGmail}>
+        <img src="/static/gmail.png" alt="Gmail" height="200px" />
+        <h1>Gmail</h1>
+      </div>
+
+      <div className="provider" onClick={recaptchaOutlook}>
+        <img src="/static/outlook.png" alt="Outlook" height="200px" />
+        <h1>Outlook</h1>
+      </div>
+      <div className="provider" onClick={recaptchaYahoo}>
+        <img src="/static/yahoo.png" alt="Yahoo" height="200px" />
+        <h1>Yahoo</h1>
+      </div>
     </div>
   );
 };
