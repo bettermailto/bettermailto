@@ -38,7 +38,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <link rel="icon" href="/static/favicon.ico" />
         <script src="https://www.google.com/recaptcha/api.js?render=6LdtPf8dAAAAAOO2sn-5upuzsnggOa5PsXBcuZDf"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       </Head>
       <Component {...pageProps} />
     </Provider>

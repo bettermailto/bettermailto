@@ -73,6 +73,9 @@ export default function User({ users }) {
       <>
         <Navbar />
         <h1>Oops! Sorry, but that user doesn't exist.</h1>
+        <h2>
+          <a href="/">Click here to go back to the home page.</a>
+        </h2>
         <Footer />
       </>
     );

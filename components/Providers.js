@@ -18,6 +18,8 @@ const Providers = (props) => {
                   props.email +
                   "&su=" +
                   props.subject;
+              } else {
+                document.getElementById("robot").style.display = "block";
               }
             });
         });
@@ -43,6 +45,8 @@ const Providers = (props) => {
                   props.email +
                   "&subject=" +
                   props.subject;
+              } else {
+                document.getElementById("robot").style.display = "block";
               }
             });
         });
@@ -68,6 +72,8 @@ const Providers = (props) => {
                   props.email +
                   "&subject=" +
                   props.subject;
+              } else {
+                document.getElementById("robot").style.display = "block";
               }
             });
         });
@@ -75,21 +81,26 @@ const Providers = (props) => {
   }
 
   return (
-    <div className="provider-div">
-      <div className="provider" onClick={recaptchaGmail}>
-        <img src="/static/gmail.png" alt="Gmail" height="200px" />
-        <h1>Gmail</h1>
-      </div>
+    <>
+      <h2 id="robot" style={{ display: "none" }}>
+        Seems like you're not human. Please try again if you are!
+      </h2>
+      <div className="provider-div" id="provider-js">
+        <div className="provider" onClick={recaptchaGmail}>
+          <img src="/static/gmail.png" alt="Gmail" height="200px" />
+          <h1>Gmail</h1>
+        </div>
 
-      <div className="provider" onClick={recaptchaOutlook}>
-        <img src="/static/outlook.png" alt="Outlook" height="200px" />
-        <h1>Outlook</h1>
+        <div className="provider" onClick={recaptchaOutlook}>
+          <img src="/static/outlook.png" alt="Outlook" height="200px" />
+          <h1>Outlook</h1>
+        </div>
+        <div className="provider" onClick={recaptchaYahoo}>
+          <img src="/static/yahoo.png" alt="Yahoo" height="200px" />
+          <h1>Yahoo</h1>
+        </div>
       </div>
-      <div className="provider" onClick={recaptchaYahoo}>
-        <img src="/static/yahoo.png" alt="Yahoo" height="200px" />
-        <h1>Yahoo</h1>
-      </div>
-    </div>
+    </>
   );
 };
 
