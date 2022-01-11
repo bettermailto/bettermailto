@@ -18,33 +18,7 @@ export async function getServerSideProps() {
   };
 }
 
-const useMediaQuery = (width) => {
-  const [targetReached, setTargetReached] = useState(false);
-
-  const updateTarget = useCallback((e) => {
-    if (e.matches) {
-      setTargetReached(true);
-    } else {
-      setTargetReached(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    const media = window.matchMedia(`(max-width: ${width}px)`);
-    media.addListener(updateTarget);
-
-    if (media.matches) {
-      setTargetReached(true);
-    }
-
-    return () => media.removeListener(updateTarget);
-  }, []);
-
-  return targetReached;
-};
-
 const Home = ({ users }) => {
-  const isBreakpoint = useMediaQuery(800);
   const [session, loading] = useSession();
 
   if (loading) {
@@ -74,16 +48,11 @@ const Home = ({ users }) => {
                   uniqueId
                 }
               >
-                {isBreakpoint
-                  ? "https://bettermailto.com/user/" +
-                    session.user.name.toLowerCase().replace(" ", "-") +
-                    "-" +
-                    uniqueId.slice(0, 10) +
-                    "..."
-                  : "https://bettermailto.com/user/" +
-                    session.user.name.toLowerCase().replace(" ", "-") +
-                    "-" +
-                    uniqueId}
+                {"https://bettermailto.com/user/" +
+                  session.user.name.toLowerCase().replace(" ", "-") +
+                  "-" +
+                  uniqueId.slice(0, 10) +
+                  "..."}
               </a>
               <span
                 id="copy-pseudodiv"
@@ -145,7 +114,6 @@ const Home = ({ users }) => {
   return (
     <>
       <Navbar />
-      {isBreakpoint && <h3>Small Screen</h3>}
       <main>
         <h1>
           The no-code replacement for <code>mailto</code>.
