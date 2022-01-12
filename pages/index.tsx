@@ -51,7 +51,7 @@ const Home = ({ users }) => {
                 {"https://bettermailto.com/user/" +
                   session.user.name.toLowerCase().replace(" ", "-") +
                   "-" +
-                  uniqueId.slice(0, 10) +
+                  uniqueId.slice(0, 5) +
                   "..."}
               </a>
               <span
