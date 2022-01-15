@@ -9,6 +9,8 @@ const Providers = (props) => {
         .then(function (token) {
           const URL_RECAPTCHA = `https://bettermailto-cors.herokuapp.com/https://google.com/recaptcha/api/siteverify?secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${token}`;
 
+          document.getElementById("gmail-spin").src = "/static/spin.jpeg";
+
           fetch(URL_RECAPTCHA)
             .then((response) => response.json())
             .then((data) => {
@@ -34,9 +36,11 @@ const Providers = (props) => {
           action: "submit",
         })
         .then(function (token) {
-          fetch(
-            `https://bettermailto-cors.herokuapp.com/https://google.com/recaptcha/api/siteverify?secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${token}`
-          )
+          const URL_RECAPTCHA = `https://bettermailto-cors.herokuapp.com/https://google.com/recaptcha/api/siteverify?secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${token}`;
+
+          document.getElementById("outlook-spin").src = "/static/spin.jpeg";
+
+          fetch(URL_RECAPTCHA)
             .then((response) => response.json())
             .then((data) => {
               if (data.score >= 0.6) {
@@ -61,9 +65,11 @@ const Providers = (props) => {
           action: "submit",
         })
         .then(function (token) {
-          fetch(
-            `https://bettermailto-cors.herokuapp.com/https://google.com/recaptcha/api/siteverify?secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${token}`
-          )
+          const URL_RECAPTCHA = `https://bettermailto-cors.herokuapp.com/https://google.com/recaptcha/api/siteverify?secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${token}`;
+
+          document.getElementById("yahoo-spin").src = "/static/spin.jpeg";
+
+          fetch(URL_RECAPTCHA)
             .then((response) => response.json())
             .then((data) => {
               if (data.score >= 0.6) {
@@ -87,16 +93,31 @@ const Providers = (props) => {
       </h2>
       <div className="provider-div" id="provider-js">
         <div className="provider" onClick={recaptchaGmail}>
-          <img src="/static/gmail.png" alt="Gmail" height="200px" />
+          <img
+            src="/static/gmail.png"
+            id="gmail-spin"
+            alt="Gmail"
+            height="200px"
+          />
           <h1>Gmail</h1>
         </div>
 
         <div className="provider" onClick={recaptchaOutlook}>
-          <img src="/static/outlook.png" alt="Outlook" height="200px" />
+          <img
+            src="/static/outlook.png"
+            id="outlook-spin"
+            alt="Outlook"
+            height="200px"
+          />
           <h1>Outlook</h1>
         </div>
         <div className="provider" onClick={recaptchaYahoo}>
-          <img src="/static/yahoo.png" alt="Yahoo" height="200px" />
+          <img
+            src="/static/yahoo.png"
+            id="yahoo-spin"
+            alt="Yahoo"
+            height="200px"
+          />
           <h1>Yahoo</h1>
         </div>
       </div>

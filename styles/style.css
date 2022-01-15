@@ -142,8 +142,8 @@ ul div img {
 .provider {
   background-color: white;
   border-radius: 10px;
-  max-width: max-content;
-  max-height: max-content;
+  width: 355.55px;
+  height: 200px;
   margin-top: 7em;
   padding-top: 2em;
   padding-bottom: 1em;
