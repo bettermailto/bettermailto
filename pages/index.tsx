@@ -143,7 +143,7 @@ const Home = ({ users }) => {
             </p>
             <p>
               bettermailto gives you a no-code alternative to all of this.{" "}
-              <a href="/signin">Sign up now</a>.
+              <a href="/sign-in">Sign up now</a>.
             </p>
           </div>
           <div className="about-code">

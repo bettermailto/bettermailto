@@ -62,7 +62,7 @@ const Navbar: NextPage = () => {
         </a>
         <div>
           <ul>
-            <a href="/signin">
+            <a onClick={() => signIn()}>
               <li className="mininavbar">Sign Up</li>
               <li className="mininavbar" id="slash">
                 <span>/ </span>

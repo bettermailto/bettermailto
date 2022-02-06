@@ -24,35 +24,12 @@ export default function User({ users }) {
   const nameResults = [];
 
   users.map((user) => {
-    idResults.push(
-      user._id == Object.values(userQuery)[0].match(/\s*[^-]+$/)[0]
-    );
+    idResults.push(user._id == Object.values(userQuery)[0]);
   });
 
-  users.map((user) => {
-    nameResults.push(
-      user.name ==
-        Object.values(userQuery)[0]
-          .match(/.+?(?=-)/g)
-          .join("-")
-          .replace("--", " ")
-          .split(" ")
-          .map((w) => w[0].toUpperCase() + w.substr(1).toLowerCase())
-          .join(" ")
-    );
-  });
-
-  if (idResults.includes(true) && nameResults.includes(true)) {
+  if (idResults.includes(true)) {
     const index = users.findIndex(
-      (user) =>
-        user.name ===
-        Object.values(userQuery)[0]
-          .match(/.+?(?=-)/g)
-          .join("-")
-          .replace("--", " ")
-          .split(" ")
-          .map((w) => w[0].toUpperCase() + w.substr(1).toLowerCase())
-          .join(" ")
+      (user) => user._id === Object.values(userQuery)[0].match(/\s*[^-]+$/)[0]
     );
 
     return (
