@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const fourohfour = () => {
+const fiveohfive = () => {
   return (
     <>
       <Navbar />
@@ -21,4 +21,4 @@ const fourohfour = () => {
   );
 };
 
-export default fourohfour;
+export default fiveohfive;
