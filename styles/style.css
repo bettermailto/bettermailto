@@ -235,6 +235,10 @@ ul div img {
   gap: 1em;
 }
 
+#email-button {
+  display: none;
+}
+
 /* Dashboard */
 .email-div {
   display: flex;

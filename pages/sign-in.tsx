@@ -25,8 +25,9 @@ export default function SignIn({ providers, csrfToken }) {
             {/* @ts-ignore */}
             <div key={provider.name}>
               {/* @ts-ignore */}
-              <button onClick={() => signIn(provider.id)}>
-                <img src="/static/google.png" height={"40px"} />
+              <button onClick={() => signIn(provider.id)} id={`${provider.id}-button`} >
+                {/* @ts-ignore */}
+                <img src={`/static/${provider.id}.png`} height={"40px"} />
                 {/* @ts-ignore */}
                 Sign in with {provider.name}
               </button>
