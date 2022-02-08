@@ -21,7 +21,6 @@ export default function User({ users }) {
   const router = useRouter();
   const userQuery = router.query;
   const idResults = [];
-  const nameResults = [];
 
   users.map((user) => {
     idResults.push(user._id == Object.values(userQuery)[0]);

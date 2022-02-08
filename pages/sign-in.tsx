@@ -21,15 +21,18 @@ export default function SignIn({ providers, csrfToken }) {
       </form>
       <div className="signin">
         {Object.values(providers).map((provider) => (
-          /* @ts-ignore */
-          <div key={provider.name}>
+          <>
             {/* @ts-ignore */}
-            <button onClick={() => signIn(provider.id)}>
-              <img src="/static/google.png" height={"40px"} />
+            <div key={provider.name}>
               {/* @ts-ignore */}
-              Sign in with {provider.name}
-            </button>
-          </div>
+              <button onClick={() => signIn(provider.id)}>
+                <img src="/static/google.png" height={"40px"} />
+                {/* @ts-ignore */}
+                Sign in with {provider.name}
+              </button>
+            </div>
+            <br />
+          </>
         ))}
       </div>
       <p style={{ textAlign: "center" }}>
