@@ -1,7 +1,6 @@
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Providers from "../components/Providers.js";
-import { useState, useCallback, useEffect } from "react";
 import { useSession } from "next-auth/client";
 import clientPromise from "../mongodb";
 
@@ -26,12 +25,12 @@ const Home = ({ users }) => {
   }
 
   if (session) {
-    const index = users.findIndex((user) => user.name === session.user?.name);
+    const index = users.findIndex((user) => user.email === session.user?.email);
     const uniqueId = users[index]._id;
     return (
       <>
         <Navbar />
-        <h1>Good to see you, {session.user?.name}!</h1>
+        <h1>Good to see you!</h1>
         <div className="email-div">
           <p>
             Your better<span>mailto</span> link is:
@@ -40,17 +39,8 @@ const Home = ({ users }) => {
         <div className="email-div">
           <p>
             <div id="email">
-              <a
-                href={
-                  "https://bettermailto.com/user/" +
-                  session.user.name.toLowerCase().replace(" ", "-") +
-                  "-" +
-                  uniqueId
-                }
-              >
+              <a href={"https://bettermailto.com/user/" + uniqueId}>
                 {"https://bettermailto.com/user/" +
-                  session.user.name.toLowerCase().replace(" ", "-") +
-                  "-" +
                   uniqueId.slice(0, 5) +
                   "..."}
               </a>
@@ -58,10 +48,7 @@ const Home = ({ users }) => {
                 id="copy-pseudodiv"
                 onClick={() => {
                   navigator.clipboard.writeText(
-                    "https://bettermailto.com/user/" +
-                      session.user.name.toLowerCase().replace(" ", "-") +
-                      "-" +
-                      uniqueId
+                    "https://bettermailto.com/user/" + uniqueId
                   );
                 }}
               >
@@ -82,10 +69,7 @@ const Home = ({ users }) => {
               id="copy-pseudodiv"
               onClick={() => {
                 navigator.clipboard.writeText(
-                  "https://bettermailto.com/user/" +
-                    session.user.name.toLowerCase().replace(" ", "-") +
-                    "-" +
-                    uniqueId
+                  "https://bettermailto.com/user/" + uniqueId
                 );
               }}
             >

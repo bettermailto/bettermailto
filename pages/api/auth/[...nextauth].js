@@ -26,6 +26,7 @@ export default NextAuth({
 
   pages: {
     signIn: "/sign-in",
+    verifyRequest: "/verify-email",
   },
 
   database: process.env.MONGODB_URI,
