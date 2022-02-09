@@ -249,14 +249,14 @@ const termsofservices = () => {
             </p>
             <p>
               The United Nations Convention on Contracts for the International
-              Sale of Goods does not apply to this Agreement.
+              Sale of Goods does not apply to this agreement.
             </p>
             <p>
               The proper venue for any disputes arising out of or relating to
               any of the same will be courts situated in the City of Dubai,
               Emirate of Dubai and you submit to the jurisdiction of such
               courts. The prevailing party in any action or proceeding to
-              enforce this Agreement shall be entitled to costs and attorneys'
+              enforce this agreement shall be entitled to costs and attorneys'
               fees.
             </p>
           </li>
@@ -264,7 +264,7 @@ const termsofservices = () => {
             <h3 style={{ textAlign: "left" }}>Limitation of liability</h3>
             <p>
               In no event will bettermailto.com, or its suppliers or licensors,
-              be liable with respect to any subject matter of this Agreement
+              be liable with respect to any subject matter of this agreement
               under any contract, negligence, strict liability or other legal or
               equitable theory for:
             </p>
@@ -276,7 +276,7 @@ const termsofservices = () => {
               (iii) for interruption of use or loss or corruption of data; or{" "}
               <br />
               (iv) for any amounts that exceed the fees paid by you to
-              bettermailto.com under this Agreement during the twelve (12) month
+              bettermailto.com under this agreement during the twelve (12) month
               period prior to the cause of action.
             </p>
             <p>
@@ -291,7 +291,7 @@ const termsofservices = () => {
             </h3>
             <p>You represent and warrant that your use of our Services:</p>
             <p>
-              (i) will be in strict accordance with this Agreement; <br />
+              (i) will be in strict accordance with this agreement; <br />
               (ii) will comply with all applicable laws and regulations
               (including without limitation all applicable laws regarding online
               conduct and acceptable content, the transmission of technical data
@@ -329,7 +329,7 @@ const termsofservices = () => {
           unenforceable, that part will be construed to reflect the parties'
           original intent, and the remaining portions will remain in full force
           and effect. A waiver by either party of any term or condition of this
-          Agreement or any breach thereof, in any one instance, will not waive
+          agreement or any breach thereof, in any one instance, will not waive
           such term or condition or any subsequent breach thereof.
         </p>
         <p>
@@ -341,8 +341,11 @@ const termsofservices = () => {
           permitted assigns.
         </p>
         <p>
-          You may contact us via support@bettermailto.com in case of any
-          questions or concerns.
+          You may contact us via{" "}
+          <a href="https://www.bettermailto.com/user/620361d125b19f0009aa2caa">
+            support@bettermailto.com
+          </a>{" "}
+          in case of any questions or concerns.
         </p>
       </div>
       <Footer />

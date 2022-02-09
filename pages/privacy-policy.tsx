@@ -88,9 +88,12 @@ const privacypolicy = () => {
           account holder or by placing a prominent notice on our site.
         </p>
         <p>
-          You may contact us via support@bettermailto.com in case of any
-          questions or concerns or if you want to request your account and your
-          information to be deleted from our databases.
+          You may contact us via{" "}
+          <a href="https://www.bettermailto.com/user/620361d125b19f0009aa2caa">
+            support@bettermailto.com
+          </a>{" "}
+          in case of any questions or concerns or if you want to request your
+          account and your information to be deleted from our databases.
         </p>
       </div>
       <Footer />
