@@ -7,9 +7,7 @@ const fourohfour = () => {
       <Navbar />
       <h1>Oops! Sorry, but this page doesn't exist.</h1>
       <h2>
-        <a style={{ color: "initial" }} href="/">
-          Click here to go back to the home page.
-        </a>
+        <a href="/">Click here to go back to the home page.</a>
       </h2>
       <Footer />
     </>

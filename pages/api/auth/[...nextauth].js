@@ -26,6 +26,7 @@ export default NextAuth({
 
   pages: {
     signIn: "/sign-in",
+    error: "/error",
     verifyRequest: "/verify-email",
   },
 
