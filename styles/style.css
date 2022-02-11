@@ -130,6 +130,11 @@ ul div img {
   transform: translateX(-50%);
 }
 
+.provider-megaflex {
+  display: flex;
+  flex-direction: column;
+}
+
 .provider {
   background-color: white;
   border-radius: 10px;
@@ -147,6 +152,19 @@ ul div img {
 .provider:hover {
   box-shadow: 5px 5px 5px var(--alt-color);
   transition: ease-in-out 0.3s;
+}
+
+.other-providers {
+  font-family: var(--alt-code-font);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 20em;
+  height: 5em;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  display: inline-flex;
+  padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
 }
 
 .provider img {
@@ -332,6 +350,7 @@ form button {
   cursor: pointer;
   font-family: var(--alt-code-font);
   font-size: 16px;
+  color: black;
   padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
 }
 

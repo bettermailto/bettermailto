@@ -11,9 +11,9 @@ const fiveohfive = () => {
         invalid. Try asking them for the URL again.
       </h2>
       <h3>
-        Still have questions? Contact us at{" "}
+        Still have questions?{" "}
         <a href="https://www.bettermailto.com/user/620361d125b19f0009aa2caa">
-          support@bettermailto.com
+          Contact us
         </a>
         .
       </h3>

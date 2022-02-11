@@ -341,9 +341,9 @@ const termsofservices = () => {
           permitted assigns.
         </p>
         <p>
-          You may contact us via{" "}
+          You may{" "}
           <a href="https://www.bettermailto.com/user/620361d125b19f0009aa2caa">
-            support@bettermailto.com
+            contact us
           </a>{" "}
           in case of any questions or concerns.
         </p>
