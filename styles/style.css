@@ -354,6 +354,10 @@ form button {
   padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
 }
 
+select option[disabled="disabled"] {
+  display: none;
+}
+
 /* Miscellaneous */
 footer {
   bottom: 0;

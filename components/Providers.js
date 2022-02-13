@@ -95,8 +95,6 @@ const Providers = (props) => {
         .then(function (token) {
           const URL_RECAPTCHA = `https://bettermailto-cors.herokuapp.com/https://google.com/recaptcha/api/siteverify?secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${token}`;
 
-          document.getElementById("loading").selected = true;
-
           fetch(URL_RECAPTCHA)
             .then((response) => response.json())
             .then((data) => {
@@ -152,9 +150,6 @@ const Providers = (props) => {
         className="other-providers"
         onChange={(e) => otherProviders(e.target.value)}
       >
-        <option id="loading" style={{ display: "None" }}>
-          Loading...
-        </option>
         <option value="" disabled selected hidden>
           Other Providers
         </option>
