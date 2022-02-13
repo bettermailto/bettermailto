@@ -86,8 +86,35 @@ const Providers = (props) => {
     });
   }
 
+  function otherProviders(e) {
+    grecaptcha.ready(function () {
+      grecaptcha
+        .execute("6LdtPf8dAAAAAOO2sn-5upuzsnggOa5PsXBcuZDf", {
+          action: "submit",
+        })
+        .then(function (token) {
+          const URL_RECAPTCHA = `https://bettermailto-cors.herokuapp.com/https://google.com/recaptcha/api/siteverify?secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${token}`;
+
+          document.getElementById("loading").selected = true;
+
+          fetch(URL_RECAPTCHA)
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.score >= 0.6) {
+                if (e == "default") {
+                  window.location =
+                    "mailto:" + props.email + "?subject=" + props.subject;
+                }
+              } else {
+                document.getElementById("robot").style.display = "block";
+              }
+            });
+        });
+    });
+  }
+
   return (
-    <>
+    <div className="provider-megaflex">
       <h2 id="robot" style={{ display: "none" }}>
         Seems like you're not human. Please try again if you are!
       </h2>
@@ -121,7 +148,19 @@ const Providers = (props) => {
           <h1>Yahoo</h1>
         </div>
       </div>
-    </>
+      <select
+        className="other-providers"
+        onChange={(e) => otherProviders(e.target.value)}
+      >
+        <option id="loading" style={{ display: "None" }}>
+          Loading...
+        </option>
+        <option value="" disabled selected hidden>
+          Other Providers
+        </option>
+        <option value="default">Default Provider (mailto)</option>
+      </select>
+    </div>
   );
 };
 
