@@ -1,3 +1,5 @@
+import { isMobile } from "react-device-detect";
+
 const Providers = (props) => {
   function recaptchaGmail(e) {
     e.preventDefault();
@@ -15,11 +17,19 @@ const Providers = (props) => {
             .then((response) => response.json())
             .then((data) => {
               if (data.score >= 0.6) {
-                window.location =
-                  "https://mail.google.com/mail/?view=cm&fs=1&to=" +
-                  props.email +
-                  "&su=" +
-                  props.subject;
+                if (isMobile) {
+                  window.location =
+                    "googlegmail:///co?to=" +
+                    props.email +
+                    "&subject=" +
+                    props.subject;
+                } else {
+                  window.location =
+                    "https://mail.google.com/mail/?view=cm&fs=1&to=" +
+                    props.email +
+                    "&su=" +
+                    props.subject;
+                }
               } else {
                 document.getElementById("robot").style.display = "block";
               }
