@@ -165,6 +165,7 @@ ul div img {
   border-radius: 25px;
   display: inline-flex;
   padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
+  margin-bottom: 2em;
 }
 
 .provider img {
