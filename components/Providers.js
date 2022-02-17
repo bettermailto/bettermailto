@@ -78,11 +78,11 @@ const Providers = (props) => {
             .then((response) => response.json())
             .then((data) => {
               if (data.score >= 0.6) {
-                window.location =
-                  "https://compose.mail.yahoo.com/?to=" +
-                  props.email +
-                  "&subject=" +
-                  props.subject;
+                if (isMobile) {
+                  window.location = `ymail://mail/compose?&to=${props.email}&subject=${props.subject}`;
+                } else {
+                  window.location = `https://compose.mail.yahoo.com/?to=${props.email}&subject=${props.subject}`;
+                }
               } else {
                 document.getElementById("robot").style.display = "block";
               }
