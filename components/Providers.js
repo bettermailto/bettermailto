@@ -19,6 +19,10 @@ const Providers = (props) => {
               if (data.score >= 0.6) {
                 if (isMobile) {
                   window.location = `googlegmail:///co?to=${props.email}&subject=${props.subject}`;
+
+                  setTimeout(function () {
+                    window.location = `https://mail.google.com/mail/?view=cm&fs=1&to=${props.email}&su=${props.subject}`;
+                  }, 3000);
                 } else {
                   window.location = `https://mail.google.com/mail/?view=cm&fs=1&to=${props.email}&su=${props.subject}`;
                 }
@@ -49,6 +53,10 @@ const Providers = (props) => {
               if (data.score >= 0.6) {
                 if (isMobile) {
                   window.location = `ms-outlook://compose?to=${props.email}&subject=${props.subject}`;
+
+                  setTimeout(function () {
+                    window.location = `https://outlook.office.com/mail/deeplink/compose?to=${props.email}&subject=${props.subject}`;
+                  }, 3000);
                 } else {
                   window.location = `https://outlook.office.com/mail/deeplink/compose?to=${props.email}&subject=${props.subject}`;
                 }
@@ -80,6 +88,10 @@ const Providers = (props) => {
               if (data.score >= 0.6) {
                 if (isMobile) {
                   window.location = `ymail://mail/compose?&to=${props.email}&subject=${props.subject}`;
+
+                  setTimeout(function () {
+                    window.location = `https://compose.mail.yahoo.com/?to=${props.email}&subject=${props.subject}`;
+                  }, 3000);
                 } else {
                   window.location = `https://compose.mail.yahoo.com/?to=${props.email}&subject=${props.subject}`;
                 }
@@ -106,8 +118,7 @@ const Providers = (props) => {
             .then((data) => {
               if (data.score >= 0.6) {
                 if (e == "default") {
-                  window.location =
-                    "mailto:" + props.email + "?subject=" + props.subject;
+                  window.location = `mailto:${props.email}?subject=${props.subject}`;
                 }
               } else {
                 document.getElementById("robot").style.display = "block";
