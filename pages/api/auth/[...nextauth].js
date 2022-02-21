@@ -22,6 +22,10 @@ export default NextAuth({
       },
       from: process.env.EMAIL_FROM,
     }),
+    Providers.Slack({
+      clientId: process.env.SLACK_CLIENT_ID,
+      clientSecret: process.env.SLACK_CLIENT_SECRET,
+    }),
   ],
 
   pages: {
