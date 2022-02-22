@@ -120,6 +120,9 @@ const Providers = (props) => {
                 if (e == "default") {
                   window.location = `mailto:${props.email}?subject=${props.subject}`;
                 }
+                if (e == "apple") {
+                  window.location = `mailto:${props.email}?subject=${props.subject}`;
+                }
               } else {
                 document.getElementById("robot").style.display = "block";
               }
@@ -170,6 +173,7 @@ const Providers = (props) => {
         <option value="" disabled selected hidden>
           Other Providers
         </option>
+        <option value="apple">Apple Mail (mailto)</option>
         <option value="default">Default Provider (mailto)</option>
       </select>
     </div>
