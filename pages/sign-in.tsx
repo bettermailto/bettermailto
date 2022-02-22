@@ -25,7 +25,7 @@ export default function SignIn({ providers, csrfToken }) {
             {/* @ts-ignore */}
             <div key={provider.name}>
               {/* @ts-ignore */}
-              <button onClick={() => signIn(provider.id)} id={`${provider.id}-button`} >
+              <button onClick={() => signIn(provider.id)} id={`${provider.id}-button`}>
                 {/* @ts-ignore */}
                 <img src={`/static/${provider.id}.png`} height={"40px"} />
                 {/* @ts-ignore */}
@@ -41,7 +41,6 @@ export default function SignIn({ providers, csrfToken }) {
         <a href="/terms-of-service">Terms of Service</a> and{" "}
         <a href="/privacy-policy">Privacy Policy</a>.
       </p>
-
       <Footer />
     </>
   );
