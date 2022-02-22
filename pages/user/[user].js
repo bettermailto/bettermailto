@@ -36,7 +36,7 @@ export default function User({ users }) {
         <Navbar />
         <div className="email-div">
           <h1 style={{ fontWeight: "normal" }}>
-            Email the way you want with to better
+            Email the way you want to with better
             <span style={{ bottom: 0.8, fontSize: 33.8 }}>mailto</span>!
           </h1>
           <Providers email={users[index].email} subject="" />
