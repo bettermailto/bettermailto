@@ -22,10 +22,6 @@ export default NextAuth({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
-    Providers.GitHub({
-      clientId: process.env.GITHUB_CLIENT_ID,
-      clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    }),
   ],
 
   pages: {
@@ -35,20 +31,4 @@ export default NextAuth({
   },
 
   database: process.env.MONGODB_URI,
-
-  callbacks: {
-    signIn: async (profile, account) => {
-      const res = await fetch("https://api.github.com/user/emails", {
-        headers: {
-          Authorization: `token ${account.accessToken}`,
-        },
-      });
-      const emails = await res.json();
-      if (!emails || emails.length === 0) {
-        return;
-      }
-      const sortedEmails = emails.sort((a, b) => b.primary - a.primary);
-      profile.email = sortedEmails[0].email;
-    },
-  },
 });
