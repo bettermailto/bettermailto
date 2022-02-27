@@ -123,6 +123,13 @@ const Providers = (props) => {
                 if (e == "apple") {
                   window.location = `mailto:${props.email}?subject=${props.subject}`;
                 }
+                if (e == "spark") {
+                  window.location = `readdle-spark://compose?subject=${props.subject}&recipient=${props.email}`;
+
+                  setTimeout(function () {
+                    window.location = `https://sparkmailapp.com/`;
+                  }, 3000);
+                }
               } else {
                 document.getElementById("robot").style.display = "block";
               }
@@ -174,6 +181,7 @@ const Providers = (props) => {
           Other Providers
         </option>
         <option value="apple">Apple Mail (mailto)</option>
+        <option value="spark">Spark by Readdle</option>
         <option value="default">Default Provider (mailto)</option>
       </select>
     </div>
