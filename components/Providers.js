@@ -130,6 +130,13 @@ const Providers = (props) => {
                     window.location = `https://sparkmailapp.com/`;
                   }, 3000);
                 }
+                if (e == "airmail") {
+                  window.location = `airmail://compose?subject=${props.subject}&to=${props.email}`;
+
+                  setTimeout(function () {
+                    window.location = `https://airmailapp.com/`;
+                  }, 3000);
+                }
               } else {
                 document.getElementById("robot").style.display = "block";
               }
@@ -182,6 +189,7 @@ const Providers = (props) => {
         </option>
         <option value="apple">Apple Mail (mailto)</option>
         <option value="spark">Spark by Readdle</option>
+        <option value="airmail">Airmail</option>
         <option value="default">Default Provider (mailto)</option>
       </select>
     </div>
