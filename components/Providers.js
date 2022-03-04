@@ -1,4 +1,5 @@
 import { isMobile } from "react-device-detect";
+import copy from "copy-to-clipboard";
 
 const Providers = (props) => {
   function recaptchaGmail(e) {
@@ -117,11 +118,26 @@ const Providers = (props) => {
             .then((response) => response.json())
             .then((data) => {
               if (data.score >= 0.6) {
-                if (e == "default") {
-                  window.location = `mailto:${props.email}?subject=${props.subject}`;
+                if (e == "airmail") {
+                  window.location = `airmail://compose?subject=${props.subject}&to=${props.email}`;
+
+                  setTimeout(function () {
+                    window.location = `https://airmailapp.com/`;
+                  }, 3000);
                 }
                 if (e == "apple") {
-                  window.location = `mailto:${props.email}?subject=${props.subject}`;
+                  copy(`${props.email}, ${props.subject}`, {
+                    message:
+                      "Copy and paste the email and subject given below.",
+                  });
+
+                  alert(
+                    "Copied the email and the subject in one line. Apple Mail should open after clicking 'OK' or 'Close' if it's installed."
+                  );
+
+                  setTimeout(function () {
+                    window.location = "message://";
+                  }, 1000);
                 }
                 if (e == "spark") {
                   window.location = `readdle-spark://compose?subject=${props.subject}&recipient=${props.email}`;
@@ -130,12 +146,8 @@ const Providers = (props) => {
                     window.location = `https://sparkmailapp.com/`;
                   }, 3000);
                 }
-                if (e == "airmail") {
-                  window.location = `airmail://compose?subject=${props.subject}&to=${props.email}`;
-
-                  setTimeout(function () {
-                    window.location = `https://airmailapp.com/`;
-                  }, 3000);
+                if (e == "default") {
+                  window.location = `mailto:${props.email}?subject=${props.subject}`;
                 }
               } else {
                 document.getElementById("robot").style.display = "block";
@@ -187,9 +199,9 @@ const Providers = (props) => {
         <option value="" disabled selected hidden>
           Other Providers
         </option>
-        <option value="apple">Apple Mail (mailto)</option>
-        <option value="spark">Spark by Readdle</option>
         <option value="airmail">Airmail</option>
+        <option value="apple">Apple Mail</option>
+        <option value="spark">Spark by Readdle</option>
         <option value="default">Default Provider (mailto)</option>
       </select>
     </div>
