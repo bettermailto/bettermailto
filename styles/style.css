@@ -332,6 +332,10 @@ form {
   gap: 0.8em;
 }
 
+.label-div label {
+  white-space: nowrap;
+}
+
 label {
   font-size: 1.3rem;
   font-family: var(--alt-code-font);
