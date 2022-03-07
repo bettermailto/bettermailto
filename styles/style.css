@@ -147,6 +147,8 @@ ul div img {
   cursor: pointer;
   position: relative;
   margin-left: 6em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .provider:hover {
@@ -456,10 +458,5 @@ footer span {
 
   .provider-div {
     flex-direction: column;
-  }
-
-  .provider {
-    margin-left: auto;
-    margin-right: auto;
   }
 }
