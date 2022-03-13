@@ -2,7 +2,6 @@ const { createSecureHeaders } = require("next-secure-headers");
 
 /** @type {import('next').NextConfig} */
 module.exports = {
-  reactStrictMode: false,
   async headers() {
     return [
       {
