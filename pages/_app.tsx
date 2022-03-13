@@ -1,11 +1,16 @@
 import type { AppProps } from "next/app";
 import { Provider } from "next-auth/client";
 import Head from "next/head";
+import Script from "next/script";
 import "../styles/style.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider session={pageProps.sessions}>
+      <Script
+        strategy="beforeInteractive"
+        src="https://www.google.com/recaptcha/api.js?render=6LdtPf8dAAAAAOO2sn-5upuzsnggOa5PsXBcuZDf"
+      ></Script>
       <Head>
         <title>bettermailto</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -37,7 +42,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="The no-code replacement for mailto."
         />
         <link rel="icon" href="/static/favicon.ico" />
-        <script src="https://www.google.com/recaptcha/api.js?render=6LdtPf8dAAAAAOO2sn-5upuzsnggOa5PsXBcuZDf"></script>
       </Head>
       <Component {...pageProps} />
     </Provider>
