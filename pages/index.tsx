@@ -108,7 +108,7 @@ const Home = ({ users }) => {
         </h2>
         <h3>Try it now, send us a test email and we'll reply back!</h3>
         {/* @ts-ignore */}
-        <Providers subject="Test - bettermailto (do not remove or change this!)" />
+        <Providers subject="Test - bettermailto" />
         <div className="about-flexbox">
           <div className="about">
             <h1 id="about">About</h1>

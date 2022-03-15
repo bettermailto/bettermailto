@@ -14,7 +14,11 @@ export default function SignIn({ providers, csrfToken }) {
         <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
         <div className="label-div">
           <label>Email address</label>
-          <input type="email" id="email" name="email" />
+          <input
+            type="email"
+            id="email"
+            name="email"
+          />
         </div>
         <button type="submit">Sign in with Email</button>
         <h2>or</h2>
