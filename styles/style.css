@@ -377,6 +377,7 @@ footer span {
   font-family: var(--alt-code-font);
   font-size: 1.1rem;
   left: 1px;
+  top: 0px;
 }
 
 .grecaptcha-badge {
