@@ -1,12 +1,12 @@
 import type { AppProps } from "next/app";
-import { Provider } from "next-auth/client";
+import { SessionProvider } from "next-auth/react";
 import Head from "next/head";
 import Script from "next/script";
 import "../styles/style.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Provider session={pageProps.sessions}>
+    <SessionProvider session={pageProps.sessions}>
       <Script
         strategy="beforeInteractive"
         src="https://www.google.com/recaptcha/api.js?render=6LdtPf8dAAAAAOO2sn-5upuzsnggOa5PsXBcuZDf"
@@ -44,7 +44,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/static/favicon.ico" />
       </Head>
       <Component {...pageProps} />
-    </Provider>
+    </SessionProvider>
   );
 }
 

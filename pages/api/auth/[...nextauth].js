@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
-import Providers from "next-auth/providers";
+import EmailProvider from "next-auth/providers/email";
+import GoogleProvider from "next-auth/providers/google";
 
 export default NextAuth({
   session: {
@@ -7,7 +8,7 @@ export default NextAuth({
   },
 
   providers: [
-    Providers.Email({
+    EmailProvider({
       server: {
         host: process.env.EMAIL_SERVER_HOST,
         port: process.env.EMAIL_SERVER_PORT,
@@ -18,7 +19,7 @@ export default NextAuth({
       },
       from: process.env.EMAIL_FROM,
     }),
-    Providers.Google({
+    GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
