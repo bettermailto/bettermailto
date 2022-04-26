@@ -3,8 +3,6 @@ import EmailProvider from "next-auth/providers/email";
 import GoogleProvider from "next-auth/providers/google";
 
 export default NextAuth({
-  secret: process.env.NEXTAUTH_SECRET,
-
   session: {
     jwt: true,
   },
