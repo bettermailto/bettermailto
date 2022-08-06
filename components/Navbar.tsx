@@ -1,14 +1,14 @@
 import type { NextPage } from "next";
-import { useSession, signIn, signOut } from "next-auth/client";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 const Navbar: NextPage = () => {
-  const [session, loading] = useSession();
+  const { data: session, status } = useSession();
 
-  if (loading) {
+  if (status == "loading") {
     return null;
   }
 
-  if (session) {
+  if (status == "authenticated") {
     return (
       <nav>
         <ul>

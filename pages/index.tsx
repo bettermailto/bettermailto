@@ -1,7 +1,7 @@
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Providers from "../components/Providers.js";
-import { useSession } from "next-auth/client";
+import { useSession } from "next-auth/react";
 import clientPromise from "../mongodb";
 
 export async function getServerSideProps() {
@@ -18,13 +18,13 @@ export async function getServerSideProps() {
 }
 
 const Home = ({ users }) => {
-  const [session, loading] = useSession();
+  const { data: session, status } = useSession();
 
-  if (loading) {
+  if (status == "loading") {
     return null;
   }
 
-  if (session) {
+  if (status == "authenticated") {
     const index = users.findIndex((user) => user.email === session.user?.email);
     const uniqueId = users[index]._id;
     return (

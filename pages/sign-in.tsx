@@ -1,5 +1,5 @@
-import { providers, signIn, getSession } from "next-auth/client";
-import { getCsrfToken } from "next-auth/client";
+import { getProviders, signIn, getSession } from "next-auth/react";
+import { getCsrfToken } from "next-auth/react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
@@ -63,7 +63,7 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
-      providers: await providers(),
+      providers: await getProviders(),
       csrfToken,
     },
   };
