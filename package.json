@@ -11,6 +11,7 @@
     "@next-auth/mongodb-adapter": "^1.0.4",
     "copy-to-clipboard": "^3.3.1",
     "cors-anywhere": "^0.4.4",
+    "jose": "^4.9.3",
     "mongodb": "^4.8.1",
     "mongoose": "^6.5.1",
     "next": "^12.1.0",
